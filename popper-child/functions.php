@@ -3,6 +3,11 @@
 function popper_child_setup() {
     // Prepare theme for translation
     load_child_theme_textdomain( 'popper-child', get_stylesheet_directory() . '/languages' );
+
+    // This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'secondary' => esc_html__( 'Footer Menu', 'popper-child' ),
+	) );
 }
 add_action( 'after_setup_theme', 'popper_child_setup');
 
@@ -58,6 +63,7 @@ function popper_posted_on() {
 
 }
 
+
 /**
  * Prints HTML with meta information for post-date/time and author on index pages.
  */
@@ -78,7 +84,7 @@ function popper_index_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'popper' ),
+		esc_html_x( 'Published %s', 'post date', 'popper' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
