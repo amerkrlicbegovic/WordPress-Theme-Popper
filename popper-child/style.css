@@ -158,3 +158,9 @@ a:focus,
 .footer-navigation a:focus {
     outline: 1px solid #fff;
 }
+/* Footer Widgets */
+#tertiary {
+    display: flex;
+    justify-content: center;
+    margin: -3em 0 4em;
+}

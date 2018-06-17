@@ -14,6 +14,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php
+		if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+			<div id="tertiary" class="widget-area clear" role="complementary">
+				<?php dynamic_sidebar( 'sidebar-2' ); ?>
+			</div><!-- #secondary -->
+		<?php }
+		?>	
 
         <?php if ( has_nav_menu( 'secondary' ) ) : ?>
 			<nav id="footer-navigation" class="footer-navigation clear" role="navigation">
@@ -24,7 +31,7 @@
                         array(
                             'theme_location' => 'secondary',
                             'menu_id' => 'secondary-menu',
-                            'depth' => 1 
+                            'depth' => 1
                         )
                     );
                     ?>
